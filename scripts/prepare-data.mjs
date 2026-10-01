@@ -103,3 +103,19 @@ const records = restaurants.map((restaurant) => {
 // 5. Save the clean records, ready to send to Algolia
 fs.writeFileSync('data/restaurants.json', JSON.stringify(records, null, 2));
 console.log('Records written:', records.length);
+
+// 6. "Before" records: the client's data exactly as delivered, joined but NOT cleaned
+// (ratings stay as text, cuisines stay messy, the JSON phone is kept).
+// cuisine and cuisine_group are only copies of the raw food_type, so the same page can show both indexes.
+const beforeRecords = restaurants.map((restaurant) => {
+  const info = infoById[String(restaurant.objectID)];
+  return {
+    ...restaurant,
+    ...info,
+    objectID: String(restaurant.objectID),
+    cuisine: [info.food_type],
+    cuisine_group: [info.food_type],
+  };
+});
+fs.writeFileSync('data/restaurants_before.json', JSON.stringify(beforeRecords, null, 2));
+console.log('Before records written:', beforeRecords.length);

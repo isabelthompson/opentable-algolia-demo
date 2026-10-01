@@ -1,0 +1,5 @@
+[
+  { "objectID": "bbq", "type": "synonym", "synonyms": ["bbq", "barbecue", "bar-b-q"] },
+  { "objectID": "veggie", "type": "synonym", "synonyms": ["veggie", "vegetarian", "vegan"] },
+  { "objectID": "pizza", "type": "synonym", "synonyms": ["pizza", "pizzeria"] }
+]
