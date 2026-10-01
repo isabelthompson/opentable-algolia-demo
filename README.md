@@ -6,7 +6,7 @@ Take-home project for the Solutions Engineer role at Algolia.
 of users (people who know the restaurant name, and people who want to explore)
 and one business goal: more bookings coming from search.
 
-**Live demo:** [Vercel URL]
+**Live demo:** https://opentable-algolia-demo.vercel.app
 
 ## How the demo is built
 
