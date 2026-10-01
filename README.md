@@ -8,26 +8,41 @@ and one business goal: more bookings coming from search.
 
 **Live demo:** [Vercel URL]
 
-![Before / After comparison](docs/step3-before-after.png)
-
 ## How the demo is built
 
 It is a short customer walkthrough in three steps, the way I would run a first
-demo call:
+demo call.
 
-| Step | What it does |
-|---|---|
-| **1. What we heard** | The pain points and goals from the discovery notes, in the prospect's own words. Editable during the call, so we align before showing anything. |
-| **2. Questions** | Five things I found in the data that only OpenTable can answer: success metric, combined cuisines, official cuisine list, phone source of truth, price field. |
-| **3. Live demo** | 5,000 real OpenTable restaurants with a Before / After switch and nine scenarios. |
+### Step 1. What we heard
 
-**Before** is the data exactly as delivered, searched with a basic database-style
-match: substring, no typo tolerance, no synonyms, no ranking, exact filters only.
-It is a small simulator in the front end, not Algolia.
+The pain points and goals from the discovery notes, in the prospect's own words.
+Every bullet is editable during the call, so we align on the problem before
+showing anything.
 
-**After** is the cleaned data on Algolia with tuned relevance.
+![Step 1: what we heard](docs/step1-what-we-heard.png)
 
-![Step 1](docs/step1-what-we-heard.png)
+### Step 2. Questions
+
+Five things I found in the data that only OpenTable can answer: how they measure
+search success, combined cuisines, an official cuisine list, which file has the
+right phone numbers, and which price field to trust. Each question states what
+the files show today and what the demo does about it. Answers are saved as you
+type.
+
+![Step 2: questions](docs/step2-questions.png)
+
+### Step 3. Live demo
+
+5,000 real OpenTable restaurants with nine scenarios and a Before / After switch.
+
+- **Before** is the data exactly as delivered, searched with a basic
+  database-style match: substring, no typo tolerance, no synonyms, no ranking,
+  exact filters only. It is a small simulator in the front end, not Algolia.
+- **After** is the cleaned data on Algolia with tuned relevance.
+
+Both sides answer the same query and filters, so the numbers are comparable.
+
+![Step 3: before and after](docs/step3-before-after.png)
 
 ## Scenarios and results
 
