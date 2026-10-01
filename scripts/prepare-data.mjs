@@ -36,12 +36,12 @@ const SPLIT = {
   'Contemporary French / American': ['Contemporary French', 'Contemporary American'],
 };
 
-// Specific cuisine -> broader group, used for the cuisine filter
+// Specific cuisine -> broader group, used for the cuisine filter.
+// Creole, Cajun and Southern stay as their own filters on purpose (see question 2 in the demo).
 const GROUP = {
-  'Contemporary American': 'American', 'Californian': 'American', 'Southern': 'American',
-  'Contemporary Southern': 'American', 'Comfort Food': 'American', 'Northwest': 'American',
+  'Contemporary American': 'American', 'Californian': 'American',
+  'Contemporary Southern': 'Southern', 'Comfort Food': 'American', 'Northwest': 'American',
   'Southwest': 'American', 'Burgers': 'American', 'Barbecue': 'American', 'Low Country': 'American',
-  'Cajun': 'American', 'Creole': 'American',
   'Contemporary Italian': 'Italian', 'Sicilian': 'Italian', 'Pizzeria': 'Italian',
   'Contemporary French': 'French', 'French American': 'French', 'Provencal': 'French',
   'Contemporary Mexican': 'Mexican', 'Regional Mexican': 'Mexican', 'Traditional Mexican': 'Mexican',
@@ -106,7 +106,7 @@ console.log('Records written:', records.length);
 
 // 6. "Before" records: the client's data exactly as delivered, joined but NOT cleaned
 // (ratings stay as text, cuisines stay messy, the JSON phone is kept).
-// cuisine and cuisine_group are only copies of the raw food_type, so the same page can show both indexes.
+// The web demo reads this file directly to simulate a basic database search.
 const beforeRecords = restaurants.map((restaurant) => {
   const info = infoById[String(restaurant.objectID)];
   return {

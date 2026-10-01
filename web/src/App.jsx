@@ -14,12 +14,15 @@ export default function App() {
   const [mode, setMode] = useState('after');
   const [location, setLocation] = useState(LOCATIONS[0]);
   const [activeScenario, setActiveScenario] = useState(null);
+  // Latest search state (query, filters), written from InstantSearch's change handler
   const lastUiState = useRef({});
+  // State handed to InstantSearch when it remounts on a mode switch
+  const [initialUiState, setInitialUiState] = useState({});
 
-  // Switching Before/After keeps the same query and filters on the other index
+  // Switching Before/After keeps the same query and filters on the other side
   function changeMode(nextMode) {
     const current = lastUiState.current[INDEXES[mode]] || {};
-    lastUiState.current = { [INDEXES[nextMode]]: current };
+    setInitialUiState({ [INDEXES[nextMode]]: current });
     setMode(nextMode);
   }
 
@@ -34,7 +37,7 @@ export default function App() {
             key={mode}
             searchClient={mode === 'before' ? basicSearchClient : searchClient}
             indexName={INDEXES[mode]}
-            initialUiState={lastUiState.current}
+            initialUiState={initialUiState}
             onStateChange={({ uiState, setUiState }) => {
               lastUiState.current = uiState;
               setUiState(uiState);

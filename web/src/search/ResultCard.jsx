@@ -3,7 +3,7 @@ import { Highlight } from 'react-instantsearch';
 import { WhyThisResult } from './WhyThisResult';
 import { milesBetween, parseLatLng } from './distance';
 
-export function ResultCard({ hit, sendEvent, origin }) {
+export function ResultCard({ hit, origin }) {
   const [showWhy, setShowWhy] = useState(false);
   const from = parseLatLng(origin);
   const miles = from && hit._geoloc ? `${milesBetween(from, hit._geoloc).toFixed(1)} mi` : null;

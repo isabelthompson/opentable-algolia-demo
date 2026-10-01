@@ -38,12 +38,33 @@ const SECTIONS = [
   },
 ];
 
+// Each hint states what the two files show today and what the demo does about it, no guessing
 const QUESTIONS = [
-  { id: 'success', text: 'How do you measure search success today?', hint: 'Bookings from search? Searches with no results?' },
-  { id: 'cuisine', text: 'Can we split combined cuisines into separate filters?', hint: 'Example: "Creole / Cajun / Southern" becomes three filters.' },
-  { id: 'categories', text: 'Do you have an official list of cuisine categories?', hint: 'Steakhouse, for example, is a restaurant type, not a cuisine.' },
-  { id: 'phone', text: 'Which file has the correct phone numbers?', hint: 'The two files use different formats.' },
-  { id: 'price', text: 'Price level or price range: which one is right?', hint: 'They disagree for about 220 restaurants.' },
+  {
+    id: 'success',
+    text: 'How do you measure search success today?',
+    hint: 'The files have no search or booking data, so the demo can\'t show impact in numbers. Knowing the metric lets us measure it on your side.',
+  },
+  {
+    id: 'cuisine',
+    text: 'Can we split combined cuisines into separate filters?',
+    hint: 'Today "Creole / Cajun / Southern" is stored as one value, so it never matches a single filter. The demo splits it into three.',
+  },
+  {
+    id: 'categories',
+    text: 'Do you have an official list of cuisine categories?',
+    hint: 'The data has 114 cuisine values, including duplicates like Steak and Steakhouse. The demo groups them into 48 filters; your list would replace mine.',
+  },
+  {
+    id: 'phone',
+    text: 'Which file has the correct phone numbers?',
+    hint: 'The JSON has digits only, the CSV has the formatted number. The demo shows the CSV version.',
+  },
+  {
+    id: 'price',
+    text: 'Price level or price range: which one is right?',
+    hint: 'The 1-4 price level and the "$30 and under" range disagree for about 220 restaurants. The demo filters by price range.',
+  },
 ];
 
 // "Saved" check that appears after an edit and fades out
