@@ -1,0 +1,18 @@
+{
+  "searchableAttributes": [
+    "name",
+    "cuisine",
+    "neighborhood,city",
+    "unordered(area)",
+    "unordered(address)"
+  ],
+  "customRanking": ["desc(stars_count)", "desc(reviews_count)"],
+  "attributesForFaceting": [
+    "searchable(cuisine_group)",
+    "cuisine",
+    "price_range",
+    "dining_style",
+    "searchable(city)",
+    "payment_options"
+  ]
+}
